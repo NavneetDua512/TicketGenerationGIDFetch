@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> </script>
+</head>
+<body>
+    <!-- <form> -->
+        <h2>Passenger Details</h2>
+
+        <p id="fg_up"></p>
+    <div class="parent">
+        <!-- outer div -->
+        <hr>
+        <div class="child">
+        <label for="name"><b>Name</b></label>
+        <input type="text" placeholder="Enter Name" name="name" #name required>
+        <br />
+        <br />
+        <label for="gender"><b>Gender</b></label><br>
+        <input type="radio" id="male" name="male" value="Male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="female" value="Female">
+        <label for="female">Female</label>
+        <br />
+        <br />
+        <label for="age"><b>Age</b></label>
+        <input type="text" placeholder="Enter Age" name="age" #age  required>
+        <hr>
+        <p>By clicking on proceed, I agree that I have read and understood the TnCs and the Privacy Policy <a href="#">Terms & Privacy</a>.</p>
+        </div>
+    </div>
+    <br/>
+    <div class="parent" id="parent2">
+        <p>Passenger Information</p>
+    </div> 
+    <button ng-model="addPassenger()">+ Add Passenger</button>
+    <button type="submit" (click)="addDetails()">Proceed to Pay</button>
+<p id="fg_down"></p>   
+
+
+<!-- </form> -->
+<script>
+    var up=document.getElementById('fg_up');
+    var down=document.getElementById('fg_down');
+    up.innerHTML = "Click on the button to " 
+                + "copy a DIV into another DIV.";  
+    function addPassenger(){
+        console.log("abcd")
+        var $el=$('.child').clone();
+        $('#parent2').append($el);
+        down.innerHTML = "Inner DIV is copied " 
+                    + "to another element."; 
+
+    }
+</script>
+</body>
+</html>
