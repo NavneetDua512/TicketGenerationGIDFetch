@@ -1,0 +1,16 @@
+
+<h3>Contact Details</h3>
+<div>
+    <div>         
+        <label>First Name</label>
+            <input type="text" [(ngModel)]="guestUser.FirstName"/><br/>          
+       <label>Last Name</label>
+            <input type="text" [(ngModel)]="guestUser.Lastname"/><br/>   
+        <label>Email ID</label>
+            <input type="text" [(ngModel)]="guestUser.EmailId"/><br/>
+        <label>Phone no.</label>
+                  <input type="text" [(ngModel)]="guestUser.PhoneNumber"/>   <br/>    
+        <button  (click)="addGuestUser()" class="btn btn-primary" >Submit</button> 
+        <button (click)="reset()" class="btn btn-info">Reset</button>
+    </div>
+</div>
