@@ -1,0 +1,54 @@
+DashBoard Controller
+===========================
+Profile sp
+create proc proc_Profile(@id int)
+as
+begin
+	SELECT G.FirstName FirstName,G.LastName LastName,U.Address,U.DOB,U.Gender,U.PhoneNumber,G.EmailId
+	FROM GuestUserDetails G JOIN  UserDetails U
+	ON (G.GID = U.GuestID) where U.UID=@id
+end
+
+Wallet
+create proc proc_Wallet(@id int)
+as
+begin
+	select * from UserDetails where UID=@id
+end
+
+JourneyRoute Controller
+===============================
+Buses sp
+CREATE proc proc_Buses(@tripID int,@fromdate date)
+as 
+begin
+	select RouteID,TripID,FromDate,CompanyName,FromLocation,ToLocation,FromTime,ToTime,Fare,NumberOfSeats from 
+	JourneyRoutes where  TripID=@tripID and FromDate=@fromdate 
+end
+
+CancelController
+==================================
+proc_currentbooking
+create proc proc_currentbooking(@id int)
+as 
+begin
+	select * from Ticket where FromDate > GETDATE() and BookingUserID=@id
+end
+
+proc_cancel
+create proc proc_cancel(@id int)
+as
+begin
+	select * from Ticket where BookingUserID=@id and TicketBookingStatus=0
+end
+
+PreviousController
+=========================
+proc_previous
+create proc proc_previous(@id int)
+as
+begin
+	select * from Ticket where BookingUserID=@id and GETDATE()>FromDate
+end
+
+
