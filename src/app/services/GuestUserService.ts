@@ -14,6 +14,9 @@ export class GuestUserService{
         return this.http.get("http://localhost:62545/api/GuestUser")
     }
     public addGuestUser(guestUser){
-        return this.http.post("http://localhost:62545/api/GuestUser",guestUser)
+        return this.http.post("http://localhost:62545/api/TicketDemo",guestUser)
+    }
+    public fetchemail(model){
+        return this.http.post("http://localhost:62545/api/FetchGID",model);
     }
 }

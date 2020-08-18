@@ -26,8 +26,15 @@ export class LoginService{
             return this.http.post("http://localhost:62545/api/UserRegister",user);
 
         }
-        public putUser(id:number,user:User){
-            return this.http.put("http://localhost:62545/api/ForgotPassword"+id,user);
+
+         public getChangePassword(user){
+            //console.log(user);
+             return this.http.post("http://localhost:62545/api/ForgotPassword",user);
+        }
+        public putUser(id:number,user){
+            console.log(user);
+            return this.http.put("http://localhost:62545/api/ForgotPassword/"+id,user);
+
         }
         // public getAdminLogin(admin){
         //     console.log(admin);

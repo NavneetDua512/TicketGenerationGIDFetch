@@ -4,7 +4,6 @@ import {FormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SelectSeatComponent } from './selectseat/selectseat.component';
-import { SeatselectionComponent } from './seatselection/seatselection.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { LoginService } from './services/loginService';
 import {HttpClientModule} from '@angular/common/http';
@@ -16,12 +15,12 @@ import { GuestuserdetailComponent } from './guestuserdetail/guestuserdetail.comp
 import { GuestUserService } from './services/GuestUserService';
 import { SeatlayoutComponent } from './seatlayout/seatlayout.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { TicketgenerationComponent } from './ticketgeneration/ticketgeneration.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SelectSeatComponent,
-    SeatselectionComponent,
     UserLoginComponent,
     UserRegistrationComponent,
     PaymentdetailsComponent,
@@ -29,7 +28,8 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
     PassengercomponentComponent,
     GuestuserdetailComponent,
     SeatlayoutComponent,
-    ForgotpasswordComponent
+    ForgotpasswordComponent,
+    TicketgenerationComponent
   ],
   imports: [
     BrowserModule,

@@ -3,13 +3,13 @@
 <div>
     <div>         
         <label>First Name</label>
-            <input type="text" [(ngModel)]="guestUser.FirstName"/><br/>          
+            <input type="text" [(ngModel)]="model.FirstName"/><br/>          
        <label>Last Name</label>
-            <input type="text" [(ngModel)]="guestUser.Lastname"/><br/>   
+            <input type="text" [(ngModel)]="model.Lastname"/><br/>   
         <label>Email ID</label>
-            <input type="text" [(ngModel)]="guestUser.EmailId"/><br/>
+            <input type="text" [(ngModel)]="model.EmailId"/><br/>
         <label>Phone no.</label>
-                  <input type="text" [(ngModel)]="guestUser.PhoneNumber"/>   <br/>    
+                  <input type="text" [(ngModel)]="model.PhoneNumber"/>   <br/>    
         <button  (click)="addGuestUser()" class="btn btn-primary" >Submit</button> 
         <button (click)="reset()" class="btn btn-info">Reset</button>
     </div>

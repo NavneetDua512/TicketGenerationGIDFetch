@@ -8,7 +8,7 @@ import { GuestUserService } from '../services/GuestUserService';
   styleUrls: ['./guestuserdetail.component.css']
 })
 export class GuestuserdetailComponent implements OnInit {
-
+  model:any={};
   guestUser:GuestUser;
   guestUsers:GuestUser[];
   constructor(private guestUserService:GuestUserService) { 
@@ -16,12 +16,29 @@ export class GuestuserdetailComponent implements OnInit {
     this.guestUsers=[];
 
   }
+
+  insertUser(){
+    this.guestUserService.addGuestUser(this.model).subscribe((data)=>{
+        //console.log(data);
+      })
+  }
+fetchId(){
+  this.guestUserService.fetchemail(this.model).subscribe((res)=>{
+    console.log(res);
+  })
+
+  }
+
   addGuestUser(){
-    console.log("hi");
-    this.guestUserService.addGuestUser(this.guestUser).subscribe((data)=>{
-      console.log(data);
-    })
-    this.guestUser=new GuestUser();
+    this.insertUser();
+    this.fetchId();
+    // console.log("hi");
+    // this.guestUserService.addGuestUser(this.model).subscribe((data)=>{
+    //   console.log(data);
+    // })
+    // this.guestUserService.fetchemail(this.model.EmailID).subscribe((res)=>{
+    //   console.log(res);
+    // })
   }
   reset(){
     this.guestUser=new GuestUser();
